@@ -2,82 +2,150 @@
 \chapter{ISI}
 \label{bab:2}
 %-----------------------------------------------------------------------------%
-
+Pada bab ini diuraikan secara terperinci mengenai seluruh aktivitas pekerjaan yang dilaksanakan oleh peserta kerja praktik selama pelaksanaan program kerja praktik. Mulai dari latar belakang pelaksanaan pekerjaan hingga hasil yang diperoleh
 %-----------------------------------------------------------------------------%
 \section{Latar Belakang Pekerjaan}
 \label{sec:latarBelakangPekerjaan}
 %-----------------------------------------------------------------------------%
-Sistem absensi di Pondok Modern Al-Ghozali sebelumnya masih dilakukan secara manual.
-Pengolahan data kehadiran yang bersumber dari mesin \textit{fingerprint} memerlukan waktu yang cukup lama karena format file yang dihasilkan tidak standar.
-Selain itu, guru juga mengalami kesulitan dalam melakukan koordinasi perizinan dengan guru piket karena proses penyampaian informasi masih dilakukan secara konvensional.
+Pelaksana beserta kelompok ditempatkan pada bagian Pengembangan Dashboard Pengelolaan Absensi dan Sistem Perizinan Guru Pondok Modern Al-Ghozali pada tim pengembang TI Pondok Modern Al-Ghozali. Berperan sebagai Project Manager, pelaksana bertanggung jawab atas berjalannya kelancaran seluruh kegiatan Kerja Praktik ini dari awal hingga akhir.
 
-Permasalahan tersebut berdampak pada keterlambatan rekapitulasi data kehadiran serta kurang optimalnya alur perizinan guru.
-Oleh karena itu, pembangunan sistem berbasis web berupa dashboard absensi otomatis dan sistem perizinan terintegrasi menjadi solusi utama untuk meningkatkan efisiensi dan akurasi pengelolaan data kehadiran.
+Sistem rekapitulasi presensi di Pondok Modern Al-Ghozali sebelumnya masih manual. Meski sudah menggunakan sistem \textit{fingerprint}, namun untuk pengolahan data supaya menjadi suatu laporan rutin itu masih dilakukan secara manual, dimana guru piket menarik data dari mesin \textit{fingerprint} yang kemudian diserahkan kepada Kepala Bidang (Kabid) Pengajaran selaku pemegang tanggung jawab sekaligus pengelola sistem presensi. Pengolahan data dari mesin \textit{fingerprint} memakan waktu lama karena format file yang tidak standar yakni .xls dimana ini merupakan format versi lama.
+
+Para guru juga kesulitan melakukan koordinasi perizinan dengan guru piket. Karena sistem pengajuan izin mengajar itu masih menggunakan \textit{Google Form}, dan pemberian tugas pengganti mengajar dilakukan dengan chat pribadi via WhatsApp yang mana terkadang ada beberapa kasus dimana guru piket yang sedang dihubungi itu tidak bersedia untuk menggantikan mengajar. Oleh karena itu, pembangunan dashboard otomatis dan sistem perizinan berbasis web menjadi solusi utama kami pada kegiatan Kerja Praktik ini.
 
 %-----------------------------------------------------------------------------%
 \section{Deskripsi Pekerjaan}
 \label{sec:deskripsiPekerjaan}
 %-----------------------------------------------------------------------------%
-Pelaksana menjalankan tugas manajerial dan teknis secara bersamaan selama kerja praktik.
-Tugas manajerial meliputi penyusunan \textit{timeline} proyek, pengelolaan \textit{backlog}, serta koordinasi melalui pelaksanaan \textit{sprint} harian.
-Pelaksana juga berperan dalam memimpin \textit{stand-up meeting} untuk memantau progres dan kendala teknis tim.
-
-Dari sisi teknis, pelaksana bertanggung jawab mengembangkan logika pemrosesan file berformat XLS yang berasal dari mesin absensi menggunakan \textit{library} Pandas.
-Selain itu, pelaksana membangun modul dashboard yang menampilkan statistik kehadiran secara \textit{real time}.
-Pelaksana juga mengembangkan fitur perizinan guru yang terintegrasi dengan notifikasi WhatsApp untuk guru piket.
-Seluruh pengembangan aplikasi dilakukan menggunakan bahasa pemrograman Python dengan framework Django.
+Pelaksana melakukan tugas manajerial dan teknis secara bersamaan. Tugas manajerial meliputi penyusunan \textit{timeline} proyek dan koordinasi \textit{sprint} dengan seluruh anggota kelompok. Tugas teknis meliputi pengembangan logika pemrosesan file XLS menggunakan \textit{library} Pandas dan sebagainya. Pelaksana membangun modul dashboard yang menampilkan statistik kehadiran dan juga \textit{leaderboard} ketepatan waktu guru mengajar. Pelaksana juga mengembangkan fitur perizinan yang otomatis mengirim pesan ke WhatsApp guru piket. Seluruh kode aplikasi menggunakan bahasa pemrograman Python dengan \textit{framework} Django. Kerja praktik dilakukan dengan skema \textit{Work from Anywhere} (WFA) dengan jam kerja sesuai yang sudah tertera pada dokumen Kerangka Acuan Kerja Praktik.
 
 %-----------------------------------------------------------------------------%
 \section{Tinjauan Pustaka}
 \label{sec:tinjauanPustaka}
 %-----------------------------------------------------------------------------%
-Pekerjaan ini menerapkan konsep pengembangan aplikasi web berbasis framework.
-Django merupakan framework Python yang mengadopsi pola \textit{Model-View-Template} (MVT) untuk memisahkan logika bisnis, tampilan, dan pengelolaan data.
-Menurut dokumentasi resminya, Django dirancang untuk mempercepat proses pengembangan aplikasi web yang aman dan terstruktur.
+Selama pelaksanaan kerja praktik, pengembangan sistem didasarkan pada berbagai konsep dan teori dalam bidang rekayasa perangkat lunak. Secara khusus, landasan teori yang digunakan berfokus pada pengembangan perangkat lunak berbasis web dari sisi \textit{backend}, pengelolaan data, serta manajemen proyek perangkat lunak. Tinjauan pustaka ini bertujuan untuk memberikan dasar teoretis terhadap pekerjaan yang dilakukan selama kerja praktik berlangsung.
 
-Selain itu, \textit{library} Pandas digunakan untuk melakukan manipulasi dan analisis data terstruktur, khususnya dalam pemrosesan data absensi.
-Metodologi Scrum diterapkan sebagai pendekatan manajemen proyek untuk mengelola pekerjaan dalam iterasi singkat dan fleksibel, sehingga kebutuhan \textit{stakeholder} dapat diakomodasi secara bertahap.
+\subsection{Backend Development}
+\textit{Backend development} merupakan salah satu bidang dalam pengembangan perangkat lunak yang berfokus pada pengolahan data, logika bisnis, serta komunikasi antara sistem dan basis data. Berbeda dengan \textit{frontend} yang berinteraksi langsung dengan pengguna, \textit{backend} bekerja di balik layar untuk memastikan seluruh proses sistem berjalan dengan benar dan konsisten (Hubli \& Jaiswal, 2023).
+
+Menurut Hubli dan Jaiswal (2023), \textit{backend development} mencakup perancangan arsitektur sistem, pengelolaan basis data, pengembangan API, serta penerapan aturan bisnis yang mendukung kebutuhan aplikasi. \textit{Backend} memiliki peran penting dalam menjaga integritas data, keamanan sistem, dan performa aplikasi secara keseluruhan. Dalam konteks sistem absensi guru, \textit{backend} bertanggung jawab mengolah data \textit{fingerprint}, menyimpan data kehadiran, serta menangani proses perizinan secara terpusat.
+
+\subsection{Framework Django}
+Django merupakan \textit{framework} pengembangan web berbasis bahasa pemrograman Python yang menerapkan pola arsitektur \textit{Model-View-Template} (MVT). \textit{Framework} ini dirancang untuk mempercepat proses pengembangan aplikasi web dengan menyediakan berbagai fitur bawaan seperti sistem autentikasi, pengelolaan basis data, serta mekanisme keamanan (Django Software Foundation, 2025).
+
+Menurut dokumentasi resmi Django, penggunaan \textit{framework} ini memungkinkan pengembang untuk membangun aplikasi web yang aman, terstruktur, dan mudah dikembangkan lebih lanjut. Django juga mendukung prinsip \textit{rapid development}, sehingga sangat sesuai digunakan dalam proyek dengan waktu pengembangan yang terbatas seperti kerja praktik. Dalam proyek ini, Django digunakan sebagai fondasi \textit{backend} untuk mengelola logika bisnis sistem absensi dan perizinan guru.
+
+\subsection{Project Management}
+\textit{Project management} merupakan disiplin ilmu yang berfokus pada perencanaan, pelaksanaan, dan pengawasan suatu proyek agar dapat mencapai tujuan yang telah ditetapkan. Dalam pengembangan perangkat lunak, \textit{project management} berperan penting untuk mengatur sumber daya, waktu, serta ruang lingkup pekerjaan agar proyek dapat diselesaikan dengan efektif.
+
+Menurut \textit{Project Management Institute} (PMI), \textit{project management} mencakup proses inisiasi, perencanaan, eksekusi, monitoring, dan penutupan proyek. Dalam kerja praktik ini, konsep \textit{project management} diterapkan untuk mengatur alur pengembangan sistem, mengoordinasikan tim, serta memastikan setiap kebutuhan \textit{stakeholder} dapat terpenuhi sesuai dengan jadwal yang telah direncanakan.
 
 %-----------------------------------------------------------------------------%
-\section{Metodologi}
+\section{Metodologi Pekerjaan}
 \label{sec:metodologi}
 %-----------------------------------------------------------------------------%
-Pengembangan sistem dilakukan dengan menggunakan kerangka kerja Scrum.
-Proses diawali dengan pelaksanaan \textit{sprint planning} di awal setiap minggu untuk menentukan target pekerjaan.
-Selama sprint berlangsung, pelaksana memimpin \textit{daily stand-up meeting} guna memantau progres dan mengidentifikasi hambatan teknis.
+Pelaksanaan kerja praktik ini menerapkan metodologi pengembangan perangkat lunak Scrum, yang merupakan bagian dari pendekatan Agile. Metodologi Scrum dipilih karena mampu mendukung pengembangan sistem secara iteratif serta adaptif terhadap perubahan kebutuhan dari pihak \textit{stakeholder}. Seluruh proses pengembangan sistem dilakukan dalam beberapa siklus pengembangan yang disebut sebagai \textit{sprint}.
 
-Pada akhir setiap sprint, tim melakukan \textit{sprint review} untuk mendemonstrasikan fitur yang telah dikembangkan.
-Pendekatan ini memastikan proses pengembangan berjalan terarah serta memungkinkan penyesuaian fitur berdasarkan kebutuhan pengguna.
+Pada pelaksanaan kerja praktik ini, satu siklus \textit{sprint} berlangsung selama kurang lebih dua minggu. Aktivitas pengembangan di dalam satu \textit{sprint} dibagi ke dalam beberapa tahapan, yaitu perencanaan, pengerjaan, pengujian, serta evaluasi. Pembagian aktivitas ini disesuaikan dengan rencana jadwal kerja praktik yang telah disusun sebelumnya.
+
+Pada awal setiap siklus \textit{sprint}, tim melaksanakan kegiatan \textit{sprint planning} untuk menentukan ruang lingkup pekerjaan yang akan dikerjakan. Pada tahap ini, kebutuhan sistem dibahas bersama dan kemudian diterjemahkan menjadi tugas-tugas teknis (\textit{backlog}) yang dapat dikerjakan oleh tim pengembang. Pelaksana berperan aktif dalam menyusun \textit{timeline} pekerjaan serta mengoordinasikan pembagian tugas selama \textit{sprint} berlangsung.
+
+Selama tahap pengerjaan, pelaksana memimpin jalannya proses pengembangan teknis serta memantau progres pekerjaan secara berkala. Untuk menjaga koordinasi dan transparansi antar anggota tim, dilakukan \textit{daily stand-up meeting} secara rutin. Kegiatan ini bertujuan untuk melaporkan progres pekerjaan, hambatan teknis yang dihadapi, serta rencana pekerjaan selanjutnya, sehingga permasalahan dapat segera diidentifikasi dan ditangani.
+
+Pada akhir setiap siklus \textit{sprint}, dilakukan \textit{review} dan pengujian terhadap fitur yang telah dikembangkan, dilanjutkan dengan \textit{sprint retrospective}. Tahapan ini bertujuan untuk mengevaluasi hasil pekerjaan, memastikan kesesuaian sistem dengan kebutuhan pengguna, serta mengidentifikasi hal-hal yang sudah berjalan dengan baik maupun yang perlu diperbaiki pada \textit{sprint} berikutnya.
+
+Dengan penerapan metodologi Scrum ini, proses pengembangan sistem menjadi lebih terstruktur, transparan, dan fleksibel terhadap perubahan kebutuhan. Metodologi ini juga membantu pelaksana dalam mengelola waktu, tugas, serta koordinasi tim secara efektif selama kerja praktik berlangsung.
 
 %-----------------------------------------------------------------------------%
 \section{Teknologi}
 \label{sec:teknologi}
 %-----------------------------------------------------------------------------%
-Proyek kerja praktik ini menggunakan teknologi modern sebagai berikut.
-Bahasa pemrograman utama yang digunakan adalah Python versi 3.10.
-Framework backend yang digunakan adalah Django versi 5.0.
-Penyimpanan data menggunakan basis data MySQL.
-Pengembangan antarmuka pengguna memanfaatkan Bootstrap dan JavaScript dengan \textit{library} Chart.js.
-Aplikasi dideploy ke server hosting Rumahweb menggunakan konfigurasi cPanel.
+Dalam pelaksanaan kerja praktik ini, terdapat beberapa teknologi yang digunakan untuk mendukung proses pengembangan sistem dashboard absensi dan perizinan guru. Teknologi yang digunakan mencakup bahasa pemrograman, \textit{framework}, basis data, serta teknologi pendukung lainnya. Adapun teknologi yang digunakan adalah sebagai berikut:
+
+Python, merupakan bahasa pemrograman tingkat tinggi yang digunakan sebagai bahasa utama dalam pengembangan sistem. Bahasa ini dipilih karena memiliki sintaks yang mudah dipahami, ekosistem \textit{library} yang luas, serta sangat cocok untuk pengolahan data dan pengembangan aplikasi berbasis web. Selama kerja praktik berlangsung, Python digunakan untuk membangun logika bisnis dan pemrosesan data absensi guru.
+
+Django, merupakan \textit{framework backend} berbasis Python yang menerapkan pola \textit{Model-View-Template} (MVT). \textit{Framework} ini dipilih karena menyediakan struktur pengembangan yang rapi, sistem keamanan bawaan, serta kemudahan dalam pengelolaan basis data. Django digunakan untuk membangun \textit{backend} aplikasi, termasuk pengelolaan data absensi, perizinan guru, serta penyediaan \textit{endpoint} yang digunakan oleh sistem \textit{frontend}.
+
+Bootstrap, merupakan \textit{framework frontend} berbasis CSS yang digunakan untuk membangun tampilan antarmuka aplikasi. \textit{Framework} ini dipilih karena menyediakan komponen antarmuka yang responsif dan konsisten, sehingga mempermudah proses pembuatan tampilan dashboard tanpa harus membangun desain dari awal.
+
+JavaScript dan Chart.js, JavaScript digunakan untuk menangani interaksi pada sisi \textit{frontend}, khususnya dalam menampilkan data secara dinamis. \textit{Library} Chart.js digunakan untuk menampilkan visualisasi data berupa grafik statistik kehadiran guru. Penggunaan grafik ini membantu pengguna memahami informasi kehadiran secara lebih intuitif dan visual.
+
+cPanel dan Rumahweb, Proses \textit{deployment} aplikasi dilakukan menggunakan layanan hosting Rumahweb dengan konfigurasi melalui cPanel. cPanel digunakan untuk mengelola file aplikasi, database, serta konfigurasi server. Dengan menggunakan layanan ini, aplikasi dapat dijalankan secara \textit{live} dan diakses oleh pihak sekolah melalui jaringan internet.
+
+Penggunaan teknologi-teknologi tersebut saling terintegrasi untuk membangun sistem informasi yang stabil, mudah dikembangkan, serta sesuai dengan kebutuhan Pondok Modern Al-Ghozali selama kerja praktik berlangsung.
 
 %-----------------------------------------------------------------------------%
 \section{Hasil Pekerjaan}
 \label{sec:hasilPekerjaan}
 %-----------------------------------------------------------------------------%
-Sistem informasi berhasil dikembangkan dan diimplementasikan dengan fitur yang lengkap.
-Fitur unggah file XLS mampu memproses data absensi \textit{fingerprint} dalam waktu singkat.
-Dashboard utama menampilkan visualisasi tren kehadiran bulanan dalam bentuk grafik.
-Modul perizinan memungkinkan guru mengunggah bukti surat dokter secara digital.
-Integrasi notifikasi WhatsApp berhasil mempercepat alur penyampaian informasi antara guru yang mengajukan izin dan guru piket.
+Selama periode kerja praktik berlangsung, pelaksana menyelesaikan beberapa pekerjaan utama yang berfokus pada pengembangan sistem dashboard absensi dan sistem perizinan guru di Pondok Modern Al-Ghozali. Pekerjaan yang dilakukan bersifat teknis dan manajerial, menyesuaikan dengan kebutuhan instansi serta permasalahan yang ditemukan di lapangan. Pada bagian ini dijelaskan hasil pekerjaan yang telah diselesaikan selama kerja praktik berlangsung.
+
+\subsection{Pengembangan Modul Upload dan Pemrosesan Data Absensi}
+Salah satu pekerjaan utama yang dilakukan adalah pengembangan modul upload data absensi guru yang bersumber dari mesin \textit{fingerprint}. Sebelumnya, data absensi diolah secara manual oleh pihak sekolah karena format file yang dihasilkan oleh mesin \textit{fingerprint} tidak seragam dan sulit untuk diproses secara langsung.
+
+Pelaksana mengembangkan sebuah fitur upload file berformat XLS yang dapat menerima data mentah dari mesin \textit{fingerprint}. File yang diunggah kemudian diproses secara otomatis menggunakan \textit{library} Pandas untuk melakukan pembersihan data (\textit{data preprocessing}), seperti penghapusan data duplikat, penyesuaian format tanggal dan waktu, serta pemetaan data ke struktur basis data yang digunakan sistem.
+
+Dengan adanya modul ini, proses pengolahan data absensi yang sebelumnya memakan waktu lama dapat dilakukan hanya dalam hitungan detik. Data absensi yang telah diproses kemudian disimpan ke dalam database dan siap digunakan oleh modul lain dalam sistem.
+
+\subsection{Pengembangan Dashboard Statistik Kehadiran Guru}
+Setelah data absensi berhasil diproses dan disimpan, pelaksana mengembangkan modul dashboard statistik kehadiran guru. Modul ini bertujuan untuk membantu pihak sekolah, khususnya Kepala Bidang dan admin, dalam memantau tingkat kehadiran guru secara visual dan mudah dipahami.
+
+Dashboard menampilkan berbagai informasi statistik seperti jumlah kehadiran guru per hari, tren kehadiran bulanan, serta rekapitulasi kehadiran dalam bentuk grafik. Visualisasi data dibangun menggunakan \textit{library} Chart.js pada sisi \textit{frontend}, sementara data disediakan oleh \textit{backend} Django melalui query terstruktur ke database.
+
+Hasil dari pengembangan modul ini adalah sebuah dashboard interaktif yang mampu menyajikan data kehadiran guru secara \textit{real time}, sehingga pihak sekolah dapat mengambil keputusan dengan lebih cepat dan berbasis data.
+
+\subsection{Pengembangan Modul Perizinan Guru Berbasis Web}
+Selain sistem absensi, pelaksana juga mengembangkan modul perizinan guru berbasis web. Modul ini dibuat untuk mengatasi permasalahan koordinasi perizinan yang sebelumnya dilakukan secara manual dan tidak terdokumentasi dengan baik.
+
+Pada modul ini, guru dapat mengajukan izin secara digital melalui sistem dengan mengisi formulir perizinan dan mengunggah dokumen pendukung, seperti surat dokter atau surat keterangan lainnya. Data perizinan yang masuk kemudian disimpan ke dalam sistem dan dapat diakses oleh pihak yang berwenang.
+
+Dengan adanya modul perizinan ini, proses pengajuan dan pencatatan izin guru menjadi lebih terstruktur, terdokumentasi, serta mudah ditelusuri kembali apabila diperlukan.
+
+\subsection{Integrasi Notifikasi Perizinan melalui WhatsApp}
+Untuk meningkatkan efektivitas komunikasi, pelaksana mengembangkan fitur notifikasi perizinan yang terintegrasi dengan WhatsApp. Setiap kali terdapat pengajuan izin baru dari guru, sistem secara otomatis mengirimkan pesan notifikasi kepada guru piket atau pihak yang bertanggung jawab.
+
+Integrasi ini bertujuan untuk mempercepat alur informasi tanpa harus menunggu pengecekan manual pada sistem. Dengan adanya notifikasi WhatsApp, pihak terkait dapat segera mengetahui adanya pengajuan izin dan mengambil tindakan yang diperlukan.
+
+Hasil dari fitur ini adalah meningkatnya kecepatan respon terhadap pengajuan izin guru serta berkurangnya keterlambatan informasi yang sebelumnya sering terjadi.
+
+\subsection{Implementasi Sistem Secara Live dan Evaluasi Awal}
+Setelah seluruh fitur utama selesai dikembangkan, sistem di-\textit{deploy} ke server hosting Rumahweb menggunakan konfigurasi cPanel. Proses \textit{deployment} dilakukan agar sistem dapat digunakan secara langsung oleh pihak Pondok Modern Al-Ghozali.
+
+Pada tahap ini, dilakukan pengujian awal untuk memastikan seluruh fitur berjalan dengan baik, mulai dari upload data absensi, tampilan dashboard, modul perizinan, hingga pengiriman notifikasi WhatsApp. Hasil pengujian menunjukkan bahwa sistem dapat berjalan sesuai dengan kebutuhan yang telah ditentukan.
+
+Dengan selesainya tahap ini, sistem dashboard absensi dan perizinan dinyatakan siap digunakan dan memberikan solusi nyata terhadap permasalahan administrasi kehadiran guru di Pondok Modern Al-Ghozali.
 
 %-----------------------------------------------------------------------------%
 \section{Aspek Non Teknis}
 \label{sec:aspekNonTeknis}
 %-----------------------------------------------------------------------------%
-Selama pelaksanaan kerja praktik, pelaksana memperoleh berbagai pembelajaran \textit{soft skill}.
-Kepemimpinan tim menjadi aspek utama yang diasah melalui pengelolaan sprint.
-Komunikasi dengan \textit{stakeholder} membantu pelaksana memahami cara menyampaikan kendala teknis kepada pihak non-teknis.
-Manajemen waktu juga menjadi keterampilan penting untuk menyeimbangkan pengembangan sistem dan tugas administratif proyek.
+Pada bagian ini dijelaskan pembelajaran non-teknis yang diperoleh pelaksana selama menjalani kerja praktik di Pondok Modern Al-Ghozali. Aspek non-teknis yang dimaksud mencakup pengembangan \textit{soft skill} yang sangat berperan dalam mendukung keberhasilan pelaksanaan proyek, khususnya dalam konteks pengembangan perangkat lunak yang melibatkan banyak pihak dan kepentingan.
+
+\subsection{Kepemimpinan dan Pengelolaan Tim}
+Selama kerja praktik berlangsung, pelaksana berperan sebagai Project Manager yang bertanggung jawab mengoordinasikan jalannya proyek pengembangan sistem. Peran ini menuntut kemampuan kepemimpinan dalam mengatur alur kerja tim, membagi tugas, serta memastikan setiap tahapan pengembangan berjalan sesuai dengan rencana yang telah disusun.
+
+Melalui pengelolaan \textit{sprint} dan pemantauan progres harian, pelaksana belajar untuk mengambil keputusan secara objektif serta menyesuaikan prioritas pekerjaan ketika terjadi perubahan kebutuhan dari pihak sekolah. Pengalaman ini melatih pelaksana untuk bersikap tegas namun tetap terbuka terhadap masukan dari anggota tim maupun \textit{stakeholder}.
+
+Kepemimpinan yang diterapkan tidak hanya berfokus pada penyelesaian tugas, tetapi juga pada upaya menjaga komunikasi dan semangat kerja tim agar proyek dapat diselesaikan dengan kualitas yang baik.
+
+\subsection{Komunikasi dengan Stakeholder}
+Komunikasi menjadi salah satu aspek non-teknis yang sangat penting selama pelaksanaan kerja praktik. Pelaksana melakukan komunikasi secara aktif dengan berbagai pihak, seperti guru, kepala bidang, dan pihak administrasi sekolah, yang sebagian besar tidak memiliki latar belakang teknis di bidang teknologi informasi.
+
+Dalam hal ini, pelaksana belajar untuk menyampaikan kendala teknis, alur sistem, serta manfaat fitur yang dikembangkan menggunakan bahasa yang mudah dipahami oleh pihak non-teknis. Kemampuan untuk menyederhanakan istilah teknis menjadi penjelasan yang praktis menjadi kunci agar kebutuhan \textit{stakeholder} dapat dipahami dengan baik dan diterjemahkan secara tepat ke dalam sistem.
+
+Pengalaman ini meningkatkan kemampuan komunikasi pelaksana dalam menjembatani kebutuhan pengguna dengan solusi teknis yang dikembangkan.
+
+\subsection{Manajemen Waktu dan Tanggung Jawab}
+Manajemen waktu menjadi aspek krusial selama kerja praktik, terutama karena pelaksana menjalankan peran ganda sebagai Project Manager dan Backend Developer. Pelaksana harus mampu membagi waktu antara tugas pengembangan teknis, koordinasi proyek, serta administrasi yang berkaitan dengan pelaporan kerja praktik.
+
+Dengan adanya target \textit{sprint} dan tenggat waktu tertentu, pelaksana dilatih untuk menyusun prioritas pekerjaan dan menyelesaikan tugas secara efisien. Setiap keterlambatan atau kesalahan dalam pengelolaan waktu dapat berdampak langsung pada progres proyek secara keseluruhan.
+
+Pengalaman ini memberikan pemahaman yang lebih baik mengenai pentingnya disiplin, tanggung jawab, dan perencanaan waktu dalam lingkungan kerja profesional.
+
+\subsection{Sikap Profesional dan Rasa Tanggung Jawab}
+Selain aspek-aspek sebelumnya, pelaksana juga mendapatkan pembelajaran mengenai sikap profesional dalam bekerja. Setiap fitur yang dikembangkan tidak hanya ditujukan untuk memenuhi kebutuhan akademik, tetapi benar-benar digunakan oleh pihak sekolah dalam kegiatan operasional sehari-hari.
+
+Hal ini menumbuhkan rasa tanggung jawab terhadap kualitas sistem yang dibangun. Pelaksana terdorong untuk memastikan bahwa fitur berjalan dengan baik, minim kesalahan, serta mudah digunakan oleh pengguna akhir. Sikap profesional ini menjadi bekal penting bagi pelaksana dalam menghadapi dunia kerja di masa mendatang.
 
 %-----------------------------------------------------------------------------%
 \section{Analisis Pelaksanaan Kerja Praktik}
@@ -85,26 +153,41 @@ Manajemen waktu juga menjadi keterampilan penting untuk menyeimbangkan pengemban
 %-----------------------------------------------------------------------------%
 
 \subsection{Ulasan Kesesuaian dengan KAKP}
-Pelaksanaan kerja praktik berjalan sesuai dengan rencana yang tercantum dalam dokumen KAKP.
-Realisasi pekerjaan mingguan mengikuti target sprint yang telah ditetapkan.
-Fitur unggah data dan dashboard statistik berhasil diselesaikan pada pertengahan periode kerja praktik.
-Penambahan fitur notifikasi WhatsApp dilakukan sebagai bentuk improvisasi berdasarkan kebutuhan mendesak di lapangan.
+Pelaksanaan kerja praktik berjalan sesuai dengan rencana awal. Realisasi mingguan mengikuti target \textit{sprint} yang ada di dokumen KAKP. Fitur upload data dan dashboard statistik selesai tepat pada pertengahan periode. Penambahan fitur notifikasi WhatsApp dilakukan sebagai improvisasi berdasarkan kebutuhan mendesak di lapangan.
 
 \subsection{Ulasan Kendala dan Cara Menanganinya}
-Kendala utama yang dihadapi adalah format data mentah dari mesin \textit{fingerprint} yang tidak konsisten.
-Permasalahan ini diatasi dengan membuat skrip \textit{preprocessing} data menggunakan \textit{library} Pandas.
-Kendala lain berupa keterbatasan memori pada server hosting Rumahweb diselesaikan dengan melakukan optimasi \textit{query} dan pembersihan file statis.
-Seluruh kendala teknis dapat diatasi sebelum masa kerja praktik berakhir.
+Selama pelaksanaan kerja praktik berlangsung, pelaksana menghadapi beberapa kendala yang memengaruhi proses pengembangan sistem. Kendala yang ditemui tidak hanya bersifat teknis, tetapi juga non-teknis yang berkaitan dengan koordinasi dan ketersediaan informasi dari pihak terkait. Kendala-kendala tersebut menjadi bagian dari dinamika pelaksanaan kerja praktik dan memberikan pembelajaran penting bagi pelaksana dalam mengelola proyek berbasis teknologi informasi di lingkungan institusi pendidikan.
+
+Berikut ini dijelaskan beberapa kendala utama yang dihadapi selama kerja praktik beserta upaya yang dilakukan untuk menanganinya.
+
+\subsubsection{Tidak Adanya File Master Data Jadwal Mengajar Guru}
+Salah satu kendala teknis utama yang dihadapi selama kerja praktik adalah tidak tersedianya file master data jadwal mengajar guru dalam format terstruktur. Jadwal mengajar para guru dibuat oleh Kepala Bidang (Kabid) dengan bantuan alat \textit{aSc Timetables}, dimana setelah itu jadwal dikirimkan kepada guru-guru melalui selembar kertas dan juga file PDF untuk masing-masing guru. Sehingga pelaksana harus mencari alternatif lain dalam pengembangan.
+
+Karena keterbatasan sumber daya yang tersedia, untuk mengatasi kendala tersebut, pelaksana terlebih dahulu mengumpulkan data jadwal mengajar dari seluruh guru, kemudian melakukan proses penyusunan ulang data menjadi format yang lebih terstruktur dalam hal ini dalam format CSV. Dalam tahap ini pelaksana merubah satu-persatu jadwal guru yang tadinya berformat PDF, menjadi sebuah file CSV berisikan jadwal jam mengajar seluruh guru yang ada.
+
+\subsubsection{Kepala Bidang yang Sulit Dihubungi untuk Koordinasi}
+Kendala non-teknis yang dihadapi selama kerja praktik adalah keterbatasan waktu dan sulitnya melakukan koordinasi langsung dengan Kepala Bidang yang bertanggung jawab terhadap sistem absensi dan perizinan. Sebagai pejabat struktural, Kepala Bidang memiliki banyak tanggung jawab administratif dan operasional, sehingga tidak selalu dapat dihubungi secara langsung dalam waktu singkat.
+
+Kondisi ini berdampak pada proses pengambilan keputusan, khususnya ketika pelaksana membutuhkan konfirmasi terkait alur bisnis, kebijakan perizinan, maupun validasi terhadap fitur yang sedang dikembangkan. Keterlambatan dalam memperoleh respons berpotensi menghambat progres pengembangan sistem apabila tidak ditangani dengan baik.
+
+Untuk mengatasi hal ini, pelaksana membuat asumsi pribadi terlebih dahulu yang nantinya akan diajukan ke Kepala Bidang (Kabid). Selain asumsi diri pelaksana pribadi, pelaksana juga kerap bertanya kepada para guru yang mengajar di Pondok Modern Al-Ghozali, meninjau merekalah yang nantinya akan menjalankan sistem ini kedepannya.
 
 \subsection{Penilaian Individu Terhadap Tempat Kerja Praktik}
-Pondok Modern Al-Ghozali menyediakan lingkungan kerja yang kondusif dan mendukung.
-Penyelia lapangan memberikan bimbingan teknis serta fleksibilitas dalam pengembangan sistem.
-Rekan tim menunjukkan dedikasi tinggi dalam menyelesaikan tugas masing-masing.
-Lingkungan kerja ini sangat ideal bagi mahasiswa untuk menerapkan ilmu yang diperoleh selama perkuliahan.
+Pondok Modern Al-Ghozali memberikan kebebasan dan kepercayaan yang sangat besar kepada pelaksana selama pelaksanaan kerja praktik berlangsung. Sejak awal, pihak sekolah membebaskan pelaksana untuk menentukan pola kerja, metode pengembangan, serta alur penyelesaian proyek sesuai dengan kebutuhan dan kondisi yang ada. Pelaksanaan kerja praktik dilakukan secara penuh dengan skema \textit{work from anywhere} (WFA), tanpa kewajiban kehadiran fisik di lokasi, kecuali pada kegiatan tertentu seperti presentasi dan penyampaian hasil akhir.
+
+Kebebasan yang diberikan tersebut didasarkan pada tingkat kepercayaan pihak sekolah terhadap pelaksana, baik dari sisi latar belakang maupun pemahaman terhadap kebutuhan institusi. Pelaksana yang merupakan alumni Pondok Modern Al-Ghozali telah memahami konteks permasalahan, budaya kerja, serta kondisi lapangan, sehingga proses pengembangan sistem dapat dilakukan secara lebih mandiri dan tepat sasaran. Dalam hal ini, lingkungan kerja praktik terasa lebih sebagai ruang kolaborasi yang terbuka dibandingkan dengan lingkungan kerja yang bersifat hierarkis dan ketat.
+
+Peran penyelia lapangan juga berjalan secara fleksibel. Penyelia tidak menerapkan pengawasan yang kaku, melainkan memberikan kepercayaan penuh kepada pelaksana dalam mengambil keputusan teknis maupun manajerial. Hubungan yang sudah terjalin sebelumnya membuat proses komunikasi berlangsung secara natural dan tidak formal, sehingga diskusi terkait kebutuhan sistem maupun kendala yang dihadapi dapat dilakukan dengan lebih nyaman dan efektif.
+
+Pendekatan kerja yang bebas namun berbasis kepercayaan ini justru mendorong pelaksana untuk bertanggung jawab penuh terhadap hasil kerja yang dihasilkan. Pelaksana dituntut untuk mengatur waktu, menjaga kualitas pengembangan, serta memastikan bahwa sistem yang dibangun benar-benar memberikan manfaat bagi pihak sekolah. Secara keseluruhan, Pondok Modern Al-Ghozali menjadi tempat kerja praktik yang sangat mendukung pengembangan kemandirian, inisiatif, dan tanggung jawab profesional mahasiswa dalam menghadapi permasalahan nyata di dunia kerja.
 
 \subsection{Relevansi dengan Perkuliahan}
-Pelaksanaan kerja praktik memiliki relevansi yang kuat dengan materi perkuliahan.
-Mata kuliah Basis Data membantu dalam perancangan tabel guru dan jadwal.
-Mata kuliah Proyek Perangkat Lunak menjadi dasar penerapan metodologi Scrum.
-Konsep pemrograman dari mata kuliah Pemrograman Lanjut mendukung pengembangan backend yang terstruktur dan efisien.
-Pengalaman kerja praktik ini memperkuat pemahaman teoretis yang diperoleh selama studi di Fasilkom UI.
+Pada pelaksanaan kerja praktik terdapat beberapa tugas yang relevan dengan pembelajaran yang didapatkan pada mata kuliah di Fasilkom UI. Beberapa mata kuliah tersebut relevan karena menjadi dasar ilmu yang digunakan untuk mengerjakan tugas yang diberikan. Mata kuliah yang dimaksud antara lain:
+
+Dasar-Dasar Pemrograman 1, bahasa yang digunakan selama kerja praktik ini adalah bahasa pemrograman Python, Selain itu bahasa pemrograman ini juga menjadi fundamental bagi mata kuliah yang relevan selanjutnya yaitu Pemrograman Berbasis Platform.
+
+Pemrograman Berbasis Platform, proyek yang dikerjakan selama periode kerja praktik ini dibantu dengan kerangka kerja atau \textit{framework} Django, yang merupakan suatu \textit{framework} yang dipelajari pada mata kuliah Pemrograman Berbasis Platform ini.
+
+Basis Data, dalam pengembangan suatu fitur, penggunaan data tertentu untuk diolah dan disajikan merupakan hal yang tidak terpisahkan. Proses tersebut melibatkan berbagai query ke basis data guna mengambil informasi yang dibutuhkan. Selain itu, perancangan basis data serta relasi antar tabel juga diterapkan selama pelaksanaan kerja praktik. Seluruh konsep dan keterampilan tersebut telah dipelajari dalam mata kuliah Basis Data.
+
+Kecerdasan Artifisial dan Sains Data Dasar, proyek ini membuat sebuah model prediksi pengolahan absensi \textit{fingerprint} guru Pondok Modern Al-Ghozali, dimana hal ini dipelajari dalam mata kuliah tersebut, Karena mata kuliah tersebut menggunakan bahasa pemrograman Python untuk membuat model, maka pekerjaan pada Kerja Praktik ini relevan dengan mata kuliah tersebut.

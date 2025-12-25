@@ -1,17 +1,9 @@
 %
-% Template Laporan Skripsi/Thesis Universitas Indonesia
+% Template Laporan Kerja Praktik UI - Disesuaikan dari Template Tugas Akhir UI
 %
 % @author  Ichlasul Affan, Azhar Kurnia
-% @version 2.2.1
+% @version 2.2.1 - Modifikasi untuk Laporan KP
 %
-% Dokumen ini dibuat berdasarkan standar IEEE dalam membuat class untuk
-% LaTeX dan konfigurasi LaTeX yang digunakan Fahrurrozi Rahman ketika
-% membuat laporan skripsi, yang kemudian diadaptasi oleh Andreas Febrian dan
-% Lia Sadita untuk template skripsi tahun 2010.
-% Konfigurasi template sebelumnya telah disesuaikan dengan
-% aturan penulisan thesis yang dikeluarkan UI pada tahun 2017.
-%
-
 
 %
 % Tipe dokumen adalah report dengan satu kolom.
@@ -39,156 +31,82 @@
 \include{_internals/sampul}
 \ifodd\thechapterpagecount\forceclearchapter\fi
 
-
 %
 % Gunakan penomoran romawi untuk nomor halaman
 %
 \pagenumbering{roman}
 
+% ============================================
+% BAGIAN KHUSUS LAPORAN KERJA PRAKTIK
+% ============================================
+
+% Set type ke "Laporan Kerja Praktik" untuk trigger kondisi yang tepat
+% \type{Laporan Kerja Praktik}
 
 %
-% Halaman Judul Dalam
+% Halaman Judul Dalam (Opsional untuk KP)
 %
-\strcompare{Kampus Merdeka}{\type}{} {
-	\addtocontents{toc}{\protect\addvspace{-1em}}
-	\addChapter{Halaman Judul}
-	\include{_internals/judul_dalam}
-	\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
-}
-
+% \addtocontents{toc}{\protect\addvspace{-1em}}
+% \addChapter{Halaman Judul}
+% \include{_internals/judul_dalam}
+% \ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
 
 %
-% Halaman Orisinalitas
+% Halaman Orisinalitas (Opsional untuk KP)
 %
-\strcompare{Laporan Kerja Praktik}{\type}{} {
-\strcompare{Kampus Merdeka}{\type}{} {
-	\addtocontents{toc}{\protect\addvspace{-1em}}
-    \addChapter{Halaman Orisinalitas}
-	\include{src/00-frontMatter/pernyataanOrisinalitas}
-	\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
-}}
+% \addtocontents{toc}{\protect\addvspace{-1em}}
+% \addChapter{Halaman Orisinalitas}
+% \include{src/00-frontMatter/pernyataanOrisinalitas}
+% \ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
 
-% Memunculkan penomoran romawi untuk halaman-halaman awal
-\pagenumbering{roman}
-
-
-% Setelah bagian ini, halaman dihitung sebagai halaman ke 2 atau 3
-\strcompare{Laporan Kerja Praktik}{\type}{\setcounter{page}{2}} {
-	\strcompare{Kampus Merdeka}{\type}{\setcounter{page}{2}} {
-		\setcounter{page}{3}
-	}
-}
-
+% Set counter halaman untuk KP (sesuai struktur)
+\setcounter{page}{2}
 
 %
-% Lembar Pengesahan
+% Lembar Pengesahan KP
 %
-\strcompare{Laporan Kerja Praktik}{\type}
-{
-	% Lembar Pengesahan Kerja Praktik dari LaTeX
-	\addChapter{Lembar Persetujuan Dosen Kerja Praktik}
-	\include{src/00-frontMatter/pengesahanKP}
-	\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
-}{
-\strcompare{Kampus Merdeka}{\type}
-{
-	\addChapter{Lembar Pengesahan}
-	\include{src/00-frontMatter/pengesahanMBKM}
-	\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
-}
-{
-	\addChapter{Lembar Pengesahan}
-	% Gunakan salah satu (comment atau hapus kode yang tidak perlu):
-	% Lembar Pengesahan Tugas Akhir dari LaTeX
-	\strcompare{Doktor}{\jenjang}
-	{\include{src/00-frontMatter/pengesahanSidangS3}}
-	{\include{src/00-frontMatter/pengesahanSidang}}
-	% Lembar Pengesahan dari PDF lain (misal: generated oleh SISIDANG [Fasilkom])
-	%\putpdf{assets/pdfs/pengesahanSidang.pdf}
-	\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
-}}
+\addChapter{Lembar Persetujuan Dosen Kerja Praktik}
+\include{src/00-frontMatter/pengesahanKP}
+\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
 
-
-\strcompare{Laporan Kerja Praktik}{\type}{} {
-\strcompare{Kampus Merdeka}{\type}{} {
-	%
-	% Kata Pengantar
-	%
-	\addChapter{\kataPengantar}
-	\include{src/00-frontMatter/kataPengantar}
-	\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
-
-	%
-	% Lembar Persetujuan Publikasi Ilmiah
-	%
-	\addChapter{Lembar Persetujuan Karya Ilmiah}
-	\include{src/00-frontMatter/persetujuanPublikasi}
-	\ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
-}}
-
+%
+% Kata Pengantar (Opsional untuk KP)
+%
+% \addChapter{\kataPengantar}
+% \include{src/00-frontMatter/kataPengantar}
+% \ifodd\thechapterpagecount\forceclearchapter\thispagestyle{onlypage}\fi
 
 %
 % Untuk halaman pertama setiap chapter mulai dari abstrak, tetap berikan mark universitas.
 %
 \pagestyle{first-pages}
 
-
 %
-% Abstrak
+% Abstrak (BAHASA INDONESIA)
 %
 \addChapter{Abstrak}
 \include{src/00-frontMatter/abstrak}
 
+%
+% Abstract (BAHASA INGGRIS - Opsional untuk KP)
+%
 \include{src/00-frontMatter/abstract}
-
 
 %
 % Daftar Isi, Gambar, dan Tabel
 %
-
 \addDefaultListPage{\tableofcontents}
 \addDefaultListPage{\listoffigures}
 \addDefaultListPage{\listoftables}
 
-
 %
-% Daftar Kode Program
-% Jika tidak digunakan, commment kode ini.
+% Daftar Kode Program (Jika diperlukan)
 %
-\addCustomListPage{\listoflistings}{\lstlistlistingname}
+% \addCustomListPage{\listoflistings}{\lstlistlistingname}
 
-
-%
-% Daftar Equation (Persamaan Matematis)
-% Jika bagian ini diperlukan, uncomment kode ini.
-%
-% \addCustomListPage{\listofequ}{\listofequname}
-
-
-%
-% Daftar Isi yang Didefinisikan Sendiri (Custom)
-% Definisi jenis objek baru dapat dilakukan di uithesis.sty
-% Jika bagian ini diperlukan, uncomment kode ini.
-%
-% \addCustomListPage{\listofthing}{\listofthingname}
-
-
-%
-% Daftar Lampiran
-% Jika tidak digunakan, commment kode ini.
-%
-% \addCustomListPage{\listofappendix}{\listofappendixname}
-
-
-% Kembalikan pengaturan chapter dan daftar isi ke aturan awal mulai dari halaman ini
+% Kembalikan pengaturan chapter dan daftar isi ke aturan awal
 \noCAPinToC
 \ifodd\thechapterpagecount\clearpage\else\forceclearchapter\fi
-
-% Jika penomoran romawi selesai di ganjil
-% \naiveoddclearchapter
-% Jika penomoran romawi selesai di genap
-% \naiveevenclearchapter
-
 
 %
 % Gunakan penomoran Arab (1, 2, 3, ...) setelah bagian ini.
@@ -196,24 +114,32 @@
 \pagenumbering{arabic}
 \pagestyle{standard}
 
+% ============================================
+% ISI LAPORAN KP (SESUAI STRUKTUR RESMI)
+% ============================================
 
 %
-% Isi dari Tugas Akhir/Karya Ilmiah
+% BAB 1: PENDAHULUAN
 %
 \setoddevenheader
-\include{src/01-body/bab1}
+\include{src/01-body/bab1}  % Sesuaikan dengan struktur KP
 \clearchapter
-\include{src/01-body/bab2}
-\clearchapter
-\include{src/01-body/bab3}
-\clearchapter
-% \include{src/01-body/bab4}
-% \clearchapter
-% \include{src/01-body/bab5}
-% \clearchapter
-% \include{src/01-body/kesimpulan}
-% \clearchapter
 
+%
+% BAB 2: ISI
+%
+\include{src/01-body/bab2}  % Sesuaikan dengan struktur KP
+\clearchapter
+
+%
+% BAB 3: PENUTUP
+%
+\include{src/01-body/bab3}  % Untuk Kesimpulan dan Saran
+\clearchapter
+
+% ============================================
+% BAGIAN AKHIR
+% ============================================
 
 %
 % Daftar Pustaka
@@ -222,29 +148,24 @@
 \include{_internals/pustaka}
 \clearchapter
 
-
 %
-% Daftar Istilah (Glossary)
-% Di aturan Tugas Akhir UI tahun 2017, tidak ada ketentuan khusus mengenai Glossary
-% Jika tidak digunakan, commment kode ini.
+% Lampiran (KAKP dan LOG KP)
 %
-% \addCustomListPage{
-% 	\printglossaries
-% 	\clearchapter
-% }{\glossaryname}
-
-
-%
-% Lampiran
-%
-% \noCAPinToC % Revert to original \addcontentsline formatting
-% % \begin{appendix}
-% % 	\newcounter{pagetemp}
-% % 	\setcounter{pagetemp}{\thepage}
-% % 	\include{_internals/markLampiran}
-% % 	\setcounter{page}{\thepagetemp}
-% % 	\clearchapter
-% % 	\include{src/99-backMatter/lampiran}
-% % \end{appendix}
+\noCAPinToC % Revert to original \addcontentsline formatting
+\begin{appendix}
+    \newcounter{pagetemp}
+    \setcounter{pagetemp}{\thepage}
+    \include{_internals/markLampiran}
+    \setcounter{page}{\thepagetemp}
+    \clearchapter
+    
+    % Lampiran 1: KAKP
+    \include{src/99-backMatter/lampiran_kakp}
+    \clearchapter
+    
+    % Lampiran 2: LOG KP
+    \include{src/99-backMatter/lampiran_logkp}
+    \clearchapter
+\end{appendix}
 
 \end{document}
